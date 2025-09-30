@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "qrd-frontend": {
+    "explorer-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -172,10 +172,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "qrd-frontend:build:production"
+              "buildTarget": "explorer-frontend:build:production"
             },
             "development": {
-              "buildTarget": "qrd-frontend:build:development",
+              "buildTarget": "explorer-frontend:build:development",
               "proxyConfig": "proxy.conf.js"
             }
           },
@@ -184,7 +184,7 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
-            "buildTarget": "qrd-frontend:build",
+            "buildTarget": "explorer-frontend:build",
             "format": "json",
             "outputPath": "src/locale"
           }
