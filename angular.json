@@ -71,33 +71,25 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "input": "public",
-                "glob": "**/*",
-                "output": "/public",
-                "ignore": ["*.webmanifest", "config"]
-              },
-              {
-                "input": "src/styles/themes",
-                "glob": "*.css",
-                "output": "/public/themes"
-              },
-              {
-                "input": "src/locale",
-                "glob": "*.json",
-                "output": "/locale"
-              },
-              {
-                "input": "public",
-                "glob": "*.webmanifest",
+                "glob": "config.json",
+                "input": "src/libs/config/configurations/dev",
                 "output": "/"
               },
               {
-                "input": "public/config",
                 "glob": "*.json",
-                "output": "/config"
+                "input": "src/assets/i18n",
+                "output": "/assets/i18n/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ng2-pdfjs-viewer/pdfjs",
+                "output": "/assets/pdfjs"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss"
+            ],
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": ["src"],
@@ -131,7 +123,14 @@
                   "with": "src/environments/environment.production.ts"
                 }
               ],
-              "baseHref": "./"
+              "baseHref": "./",
+              "assets": [
+                {
+                  "glob": "config.json",
+                  "input": "src/libs/config/configurations/prod",
+                  "output": "/"
+                }
+              ]
             },
             "preproduction": {
               "aot": true,
@@ -157,7 +156,14 @@
                   "with": "src/environments/environment.preproduction.ts"
                 }
               ],
-              "baseHref": "./"
+              "baseHref": "./",
+              "assets": [
+                {
+                  "glob": "config.json",
+                  "input": "src/libs/config/configurations/stage",
+                  "output": "/"
+                }
+              ]
             },
             "development": {
               "optimization": false,

@@ -1,0 +1,38 @@
+/*!
+ * Copyright (c) 2023-2024. IdrisovII & EustroSoft.org
+ *
+ * This file is part of eustrosoft-front project.
+ * See the LICENSE file at the project root for licensing information.
+ */
+
+@use '../../../../libs/common-ui/styles/variables' as vars;
+@use '../../../../libs/common-ui/styles/utilities' as utils;
+
+:host {
+  ::ng-deep {
+    .cdk-virtual-scroll-content-wrapper {
+      position: unset;
+      @extend .flex, .flex-column, .g-2;
+    }
+    .cdk-virtual-scrollable {
+      contain: unset;
+    }
+    .mat-mdc-button-touch-target {
+      height: unset;
+    }
+  }
+}
+
+.upload-items-wrapper {
+  background-color: map-get(vars.$grey-palette, 200);
+  border: 2px solid map-get(vars.$grey-palette, 200);
+  border-radius: 0.5rem;
+}
+
+.upload-control {
+  background: white;
+}
+
+.warning-text {
+  color: map-get(vars.$red-palette, 500);
+}
